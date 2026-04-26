@@ -2,10 +2,10 @@
 @'
 Write-Host "Waiting for vehicle to come online..."
 while ($true) {
-    $result = & "C:\Program Files\Tailscale\tailscale.exe" ping 100.116.152.100 2>&1
+    $result = & "C:\Program Files\Tailscale\tailscale.exe" ping ########### 2>&1
     if ($result -match "pong") {
         Write-Host "Vehicle is UP! Connecting..."
-        ssh stud@100.116.152.100
+        ssh ############
         break
     }
     Write-Host "Still offline, retrying in 15s..."
