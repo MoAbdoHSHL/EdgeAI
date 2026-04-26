@@ -1,6 +1,6 @@
 
 @'
-$remote    = "stud@100.116.152.100"
+$remote    = "###########"
 $localLogs = "D:\Edge_AI\Tailscale\logs\"
 
 # Create log folder on vehicle and start capturing
