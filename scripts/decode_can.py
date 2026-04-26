@@ -9,23 +9,23 @@ DECODED_DIR.mkdir(exist_ok=True)
 
 def parse_frame(can_id, data):
     r = {}
-    if can_id == 0x188:
+    if can_id == ####:
         r["speed_hz"]         = int.from_bytes(data[0:2], "little", signed=True) / 10.0
         r["motor_ready"]      = (data[2] >> 0) & 1
         r["ac_current_raw"]   = data[7]
-    elif can_id == 0x288:
+    elif can_id == ####:
         r["motor_temp_C"]     = data[2] - 40
         r["inverter_temp_C"]  = int.from_bytes([data[3]], signed=True)
         r["soc_pct"]          = data[4]
         r["battery_voltage_V"]= int.from_bytes(data[6:8], "little") / 1000.0
-    elif can_id == 0x388:
+    elif can_id == ####:
         r["alarm_code"]       = int.from_bytes(data[0:2], "little")
         r["odometer"]         = int.from_bytes(data[2:4], "little", signed=True)
-    elif can_id == 0x208:
+    elif can_id == ####:
         r["target_speed_hz"]  = int.from_bytes(data[0:2], "little") / 10.0
         r["forward"]          = (data[2] >> 3) & 1
         r["reverse"]          = (data[2] >> 4) & 1
-    elif can_id == 0x308:
+    elif can_id == ####:
         r["max_torque_motoring"] = data[0]
         r["max_torque_braking"]  = data[1]
     return r
